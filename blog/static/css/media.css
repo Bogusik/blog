@@ -1,0 +1,87 @@
+@media screen and (max-width: 1366px) {
+	main {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	main {
+		width: 90%;
+	}
+
+	form {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	input, textarea {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.block {
+		padding: 0.5em 0;
+	}
+
+	.comment-content {
+		padding-left: 0;
+	}
+
+	q {
+		padding: 20px 20px;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	main {
+		width: 95%;
+	}
+
+	menu {
+		width: 80%;
+	}
+
+	ul {
+		margin-left: 10px;
+	}
+
+	#enable-menu {
+		display: block;
+	}
+	
+	.menu-item, .multi-button {
+		margin: 10px auto;
+	}
+
+	.list-item {
+		padding: 0;
+		margin: 0;
+	}
+
+	.post {
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.block.left {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+
+	.block.right {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+}

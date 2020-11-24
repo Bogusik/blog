@@ -1,0 +1,157 @@
+.content .menu-item, .multi-button-item {
+	font-family: var(--header-font);
+	font-weight: 600;
+	font-size: 0.9em;
+}
+
+a {
+	color: var(--font-color);
+	font-size: 1em;
+	text-decoration: none;
+	font-weight: 400;
+	padding: 5px;
+	border-radius: 5px;
+	display: inline-block;
+	border-bottom: 1px solid var(--line-color);
+}
+
+menu {
+	width: 20%;
+	overflow-x: hidden;
+	background-color: #111;
+	padding: 0;
+	margin: 0;
+	min-width: 300px;
+	z-index: 2;
+	transition-duration: 1s;
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	left: -100%;
+	padding-top: 60px;
+}
+
+.openbtn, .themebtn {
+	font-size: 2em; 
+	padding: 0px 10px 5px 10px;
+	line-height: 1em;
+	font-family: var(--header-font);
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 40px;
+	height: 40px;
+}
+
+.openbtn.dark{
+	background-image: url("/static/icons/menu.svg");
+	background-size: 26px 30px;
+}
+
+.openbtn.light{
+	background-image: url("/static/icons/menu_w.svg");
+	background-size: 26px 30px;
+}
+
+.themebtn.moon {
+	background-image: url("/static/icons/moon.svg");
+	background-size: 26px 26px;
+	background-repeat: no-repeat;
+}
+
+.themebtn.sun {
+	background-image: url("/static/icons/sun_w.svg");
+	background-size: 30px;
+}
+
+menu ul li a, .closebtn, menu ul li .menu-item, menu ul li .multi-button,  menu ul li .multi-button-item {
+	display: block;
+	font-family: var(--header-font);
+	font-weight: 600;
+	font-size: 1.1em;
+	border-radius: 0;
+	color: #aaa;
+	width: 100%;
+	margin: 0;
+	min-height: 2em;
+	line-height: 2em;
+	border: none;
+}
+
+.closebtn {
+	display: block;
+	position: absolute;
+	float: right;
+	right: 20px;
+	top: 20px;
+	background-image: url("/static/icons/close_w.svg");
+	background-size: 26px 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 40px;
+	height: 40px;
+}
+
+menu ul {
+	list-style: none;
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+}
+
+menu ul li .multi-button ul li {
+	padding-left: 10%;
+}
+menu ul li .multi-button span{
+	font-size: 1em;
+}
+
+menu ul li .multi-button ul li a{
+	color: #aaa;
+	margin-left: 0;
+	font-size: 1em;
+}
+
+menu ul li {
+	margin: 0;
+	padding-left: 5%;
+}
+
+menu ul li a:hover,.closebtn:hover, menu ul li .menu-item:hover, menu ul li .multi-button:hover,  menu ul li .multi-button-item:hover, menu ul li .multi-button ul li a:hover {
+	color: #fff;
+}
+
+.content a:hover, .content .menu-item:hover, .content .multi-button-item:hover {
+	background-color: var(--line-color);
+	cursor: pointer;
+}
+
+.link-button {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.multi-button-item {
+	padding-left: 5px;
+}
+
+.menu-item, .multi-button-item {
+	margin: 0;
+	display: inline-block;
+	font-weight: 600;
+	border-bottom: 1px solid var(--line-color);
+}
+
+.content .menu-item.admin {
+	background-color: var(--button-color);
+	color: var(--bg-color);
+	border: none;
+	color: var(--line-color);
+	border-bottom: 1px solid var(--button-color);
+}
+
+.content .menu-item.admin:hover {
+	background-color: var(--line-color);
+	color: var(--button-color);
+	border-bottom: 1px solid var(--line-color);
+}

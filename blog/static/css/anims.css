@@ -1,0 +1,9 @@
+@keyframes unhover {
+	from {
+		display: block;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

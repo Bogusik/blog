@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ title }}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<script type="text/javascript" src="{{ url_for('static', filename='js/theme.js') }}"></script>
+{% if request.cookies.get('theme') == None %}
+<body id="body" class="light">
+{% else %}
+<body id="body" class="{{ request.cookies.get('theme') }}">
+{% endif %}
+	<menu id="menu">
+		<a href="javascript:void(0)" class="closebtn" onclick="changeMenuState(false)"></a>
+		<ul>
+		<li><a class="menu-item" href="{{ url_for('posts.main') }}">Головна</a></li>
+		<li><a class="menu-item" href="{{ url_for('main.about') }}">Про блог</a></li>
+		<li>
+			<div class="multi-button">
+				<span class="multi-button-item">Розділи</span>
+				<ul>
+					{% for cat in categories %}
+					<li><a class="list-item" href="/category/{{ cat.id }}">{{ cat.title | title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</li>
+		<li><a class="menu-item" href="{{ url_for('messages.contact') }}">Зв'язатися</a></li>
+		{% if current_user.is_authenticated %}
+			<li><a class="menu-item" href="{{ url_for('admin.stats') }}">Статистика</a></li>
+			<li><a class="menu-item" href="{{ url_for('posts.post_add') }}">Додати пост</a></li>
+			<li><a class="menu-item" href="{{ url_for('messages.msgs') }}">Повідомлення</a></li>
+			<li><a class="menu-item" href="{{ url_for('users.main') }}">Користувачі</a></li>
+			<li><a class="menu-item" href="{{ url_for('posts.categories') }}">Категорії</a></li>
+		{% endif %}
+		<ul>
+	</menu>
+	<div class="content">
+	<header>
+		<div>
+		{% if request.cookies.get('theme') == "dark" %}
+			<a class="openbtn light" id="openbtn" onclick="changeMenuState(true)"></a>
+			<a class="themebtn sun" id="themebtn" onclick="changeTheme()"></a>
+		{% else %}
+			<a class="openbtn dark" id="openbtn" onclick="changeMenuState(true)"></a>
+			<a class="themebtn moon" id="themebtn" onclick="changeTheme()"></a>
+		{% endif %}
+		</div>
+		{% if subtitle %} <div class="sub-headline">{{ subtitle }}</div> {% endif %}
+		<div class="headline">BogBlog</div>
+	</header>
+	<main>
+	{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+			{% for category, message in messages %}
+				<div class="message-{{category}}">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	{% block main %}{% endblock %}
+	</main>
+	<div class="div-line"></div>
+	<footer>
+		Цей сайт зроблено з використанням Flask.
+
+		{% if current_user.is_authenticated %}
+			<a href="/logout">Вийти</a>
+		{% endif%}
+	</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block main %}
+<form method="POST" action="">
+	{{ form.hidden_tag() }}
+	<label>Назва:</label>
+	{{ form.title(placeholder="Розділ") }}
+	{{ form.submit(value="Додати") }}
+</form>
+{% for category in categors.items: %}
+<div class="comment" style="border-top: none;">
+	<div class="comment-upper">
+	<div class="comment-header">{{ category.title }}</div>
+	<a class="menu-item admin" href="/delete?category={{ category.id }}&next=/categories" onclick="confirm('Ти певен?')">X</a>
+	<div class="comment-content">
+		<ul>
+			{% for post in category.posts %}
+				<li>{{ post.title }}<a class="menu-item admin" href="/delete?post={{ post.id }}">X</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+</div>
+{% endfor %}
+<div class="page-switch">
+{% for page in categors.iter_pages() %}
+		{% if page != categors.page %}
+		<a href="{{ url_for('posts.categories', page=page) }}">{{ page }}</a>
+		{% else %}
+		<a class="current-page" href="{{ url_for('posts.categories', page=page) }}">{{ page }}</a>
+		{% endif %}
+{% endfor %}
+</div>
+{% endblock main %}

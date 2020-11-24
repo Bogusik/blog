@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block main %}
+<form method="POST" action="" enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	<label>Логін:</label><br>
+	{{ form.username() }}<br>
+	<label>Пароль:</label><br>
+	{{ form.passwd() }}<br>
+	{{ form.submit(value="Відправити") }}
+</form>
+{% endblock main %}

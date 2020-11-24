@@ -1,0 +1,90 @@
+.post {
+	margin: 4em 2em;
+}
+
+.post-header {
+	font-family: var(--header-font);
+	font-size: 1.6em;
+	margin: 1em auto;
+	display: block;
+	font-weight: 800;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.post-header a {
+	font-family: var(--header-font);
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.post-subheader {
+	margin: 0 auto;
+	margin-bottom: 1.5em;
+	color: var(--hidden-font-color);
+	text-align: center;
+}
+
+.comment {
+	margin: 20px 10px;
+	padding: 20px 10px;
+	border-top: 1px dashed #aaa;
+}
+
+.comment-header {
+	display: inline-block;
+	float: left;
+	font-family: var(--header-font);
+	font-weight: 600;
+}
+
+.comment-time {
+	display: inline-block;
+	float: right;
+	font-style: italic;
+	color: var(--hidden-font-color);
+	font-size: 0.8em;
+}
+
+.comment-upper {
+	width: 100%;
+	height: 2em;
+}
+
+.comment-content {
+	display: block;
+	width: 100%;
+	padding-left: 1.5em;
+}
+
+.content .hashtag {
+	background-color: #eee;
+	margin: 5px 0;
+	font-family: var(--header-font);
+	font-size: 0.8em;
+}
+
+.content .hashtag:hover {
+	background-color: var(--button-color);
+	border-color: var(--button-color);
+	color: var(--bg-color);
+}
+
+.hidden-header {
+	font-weight: 600;
+	margin: 10px 0;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	font-family: var(--header-font);
+	color: var(--hidden-font-color);
+}
+
+.post-content {
+	line-height: 1.5em;
+}
+
+.related-post-link {
+	font-weight: 600;
+	margin-top: 5px;
+}

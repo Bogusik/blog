@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block main %}
+<form method="POST" action="" enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	<label>Назва:</label><br>
+	{{ form.title(placeholder="Юстин") }}<br>
+	<label>Теги:</label><br>
+	{{ form.tags(placeholder="python, useful") }}<br>
+	<label>Категорія:</label><br>
+	{{ form.category() }}<br>
+	<label>Повідомлення:</label><br>
+	{{ form.content(placeholder="Привіт, хочу сказати, що...(мінімум 50 символів)", style="resize: vertical;") }}<br>
+	<label>Файли:</label><br>
+	{{ form.file() }}<br>
+	<ul>
+		{% for file in files: %}
+		<li>
+			{{ file }}
+			<a class="menu-item admin" href="/delete?file={{ request.view_args['id'] }}/{{ file }}&next=/post/edit/{{ request.view_args['id'] }}">X</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{{ form.submit(value="Відправити") }}
+</form>
+{% endblock main %}

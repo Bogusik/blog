@@ -1,0 +1,46 @@
+{% extends "template.html" %}
+{% block main %}
+{% for post in posts.items %}
+<div class="post">
+	{% if post.title %}
+	<div class="post-header">
+		<a href="/post/{{ post.id }}">
+		{{ post.title | title }}
+		</a>
+	</div>
+	{% endif %}
+	<div class="post-subheader">
+		опубліковано <span>{{ post.date.day }} {{ months[post.date.month-1] }} {{ post.date.year }}</span> в розділі <a href="/category/{{ post.category.id }}">{{ post.category.title | title }}</a>
+		{% if current_user.is_authenticated %}
+		<br><br>
+	<a class="menu-item admin" href="/post/edit/{{ post.id }}">
+		Редагувати
+	</a>
+	<a class="menu-item admin" href="/delete?post={{ post.id }}">
+		Видалити
+	</a>
+	{% endif %}
+	</div>
+	<div class="post-content">
+		{{ post.content | truncate(post.content.index("</p>")) | safe }}
+	</div>
+	{% if post.content | length > 600 %}
+	<div class="link-button">
+		<a href="/post/{{ post.id }}">
+			Продовжити читання...
+		</a>
+	</div>
+	{% endif %}
+</div>
+{% endfor %}
+<div class="page-switch">
+
+{% for page in posts.iter_pages() %}
+		{% if page != posts.page %}
+		<a href="/{{ url }}/{{ page }}">{{ page }}</a>
+		{% else %}
+		<a class="current-page" href="/{{ url }}/{{ page }}">{{ page }}</a>
+		{% endif %}
+{% endfor %}
+</div>
+{% endblock main %}

@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block main %}
+<div class="block">
+	<h3>Пости за популярністю:</h3>
+	<ul>
+		{% for post in posts: %}
+		<li><a href="/post/{{post.id}}">{{ post.title }}</a> - {{ post.views }}</li>
+		{% endfor %}
+	</ul>
+	<h3>За категоріями:</h3>
+	<ul>
+		{% for tp in views_by_cat: %}
+		<li><a href="/category/{{tp[0].id}}">{{ tp[0].title }}</a> - {{ tp[1] }}</li>
+		{% endfor %}
+	</ul>
+	<h3>За тегами:</h3>
+	<ul>
+		{% for tp in views_by_tag: %}
+		<li><a href="/tag/{{tp[0].id}}">{{ tp[0].title }}</a> - {{ tp[1] }}</li>
+		{% endfor %}
+	</ul>
+	<h3>Всього переглядів: {{ sum }}</h3>
+</div>
+{% endblock main %}

@@ -1,0 +1,35 @@
+@font-face {
+	font-family: Garamond;
+	src: url("../fonts/Garamond.ttf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Garamond;
+	src: url("../fonts/Garamondi.ttf");
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url("../fonts/Raleway.ttf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Raleway;
+	src: url("../fonts/Ralewayi.ttf");
+	font-style: italic;
+}
+
+@font-face {
+	font-family: Literata;
+	src: url("../fonts/Literata.ttf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Literata;
+	src: url("../fonts/Literatai.ttf");
+	font-style: italic;
+}

@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block main %}
+<form method="POST" action="">
+	{{ form.hidden_tag() }}
+	<label>Ім'я:</label><br>
+	{{ form.name(placeholder="Юстин") }}<br>
+	<label>Емейл:</label><br>
+	{{ form.email(placeholder="moya@poshta.ua") }}<br>
+	<label>Повідомлення:</label><br>
+	{{ form.content(placeholder="Привіт, хочу сказати, що...(мінімум 50 символів)", rows=6) }}<br>
+	{{ form.submit(value="Відправити") }}
+</form>
+{% endblock main %}

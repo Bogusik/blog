@@ -1,0 +1,33 @@
+{% extends "template.html" %}
+{% block main %}
+<form method="POST" action="" enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	<label>Ім'я:</label><br>
+	{{ form.name(placeholder="Юстин") }}<br>
+	<label>Фамілія:</label><br>
+	{{ form.surname(placeholder="python, useful") }}<br>
+	<label>Логін:</label><br>
+	{{ form.username() }}<br>
+	<label>Пароль:</label><br>
+	{{ form.passwd() }}<br>
+	{{ form.submit(value="Додати") }}
+</form>
+{% for user in users.items: %}
+<div class="comment" style="border-top: none;">
+	<div class="comment-upper">
+	<div class="comment-header">{{ user.name }} {{ user.surname }}</div>
+	<a class="menu-item admin" href="/messages/delete?user={{ user.id }}">X</a>
+	</div>
+	<div class="comment-content">{{ user.username }}</div>
+</div>
+{% endfor %}
+<div class="page-switch">
+{% for page in users.iter_pages() %}
+		{% if page != users.page %}
+		<a href="{{ url_for('messages.msgs', page=page) }}">{{ page }}</a>
+		{% else %}
+		<a class="current-page" href="{{ url_for('messages.msgs', page=page) }}">{{ page }}</a>
+		{% endif %}
+{% endfor %}
+</div>
+{% endblock main %}

@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% block main %}
+{% for message in messages.items: %}
+<div class="comment" style="border-top: none;">
+	<div class="comment-upper">
+	<div class="comment-header">{{ message.title }} {{ message.email }}</div>
+	<a class="menu-item admin" href="/messages/delete?message={{ message.id }}">X</a>
+	<div class="comment-time">{{ message.date.date().strftime("%d.%m.%y") }}</div>
+	</div>
+	<div class="comment-content">{{ message.content }}</div>
+</div>
+{% endfor %}
+<div class="page-switch">
+{% for page in messages.iter_pages() %}
+		{% if page != messages.page %}
+		<a href="{{ url_for('messages.msgs', page=page) }}">{{ page }}</a>
+		{% else %}
+		<a class="current-page" href="{{ url_for('messages.msgs', page=page) }}">{{ page }}</a>
+		{% endif %}
+{% endfor %}
+</div>
+{% endblock main %}

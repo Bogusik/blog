@@ -1,0 +1,37 @@
+@import "normalize.css";
+@import "anims.css";
+@import "fonts.css";
+@import "posts.css";
+@import "menu.css";
+@import "blocks.css";
+@import "forms.css";
+@import "elements.css";
+@import "media.css";
+
+body {
+	--main-font: Garamond;
+	--header-font: Literata;
+}
+
+body.light {
+	--bg-color: #fff;
+	--font-color: #222;
+	--line-color: #eee;
+	--hidden-font-color: #aaa;
+	--button-color: #000;
+	--code-bg-color: #fafafa;
+}
+
+body.dark {
+	--bg-color: #333;
+	--font-color: #aaa;
+	--line-color: #555;
+	--hidden-font-color: #555;
+	--button-color: #aaa;
+	--code-bg-color: #444;
+}
+
+* {
+	transition-duration: 0.5s;
+	box-sizing: border-box;
+}

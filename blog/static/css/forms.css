@@ -1,0 +1,61 @@
+input, textarea {
+	padding: 10px 20px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: var(--bg-color);
+	font-size: 1em;
+	border: 1px solid var(--hidden-font-color);
+	color: var(--font-color);
+}
+
+select {
+	padding: 5px 20px;
+	margin: 10px;
+	font-size: 1em;
+}
+
+textarea {
+	width: 100%;
+	min-height: 80px;
+	resize: vertical;
+}
+
+label {
+	margin: 20px 0 20px 10px;
+	font-weight: 400;
+	font-family: var(--header-font);
+	font-size: 0.8em;
+}
+
+form {
+	width: 100%;
+	margin: 0 auto;
+}
+
+input[type="submit"] {
+	border: 1px solid var(--button-color);
+	border-radius: 5px;
+	background-color: var(--button-color);
+	color: var(--bg-color);
+	letter-spacing: 1px;
+}
+
+input[type="submit"]:hover {
+	background-color: transparent;
+	color: var(--button-color);
+	cursor: pointer;
+}
+
+input:hover, textarea:hover {
+	border-color: var(--button-color);
+}
+
+.subscribe-form {
+	text-align: center;
+	margin: 1em;
+}
+
+.post.subscribe {
+	width: 80%;
+	margin: 2em auto;
+}
